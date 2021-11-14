@@ -1,6 +1,11 @@
 {
   "name": "zwiggy",
   "version": "1.0.0",
+  "engines": {
+    "node": "13.1.0",
+    "npm": "6.12.1",
+    "yarn": "1.19.1"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
