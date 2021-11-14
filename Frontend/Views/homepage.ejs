@@ -1,0 +1,109 @@
+<!--HomePage-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zwiggy</title>
+    <link rel="shortcut icon" type="image/css"
+        href="https://www.logolynx.com/images/logolynx/c1/c1aab45afa5b0623e251711ba6440544.png">
+    <link rel="stylesheet" type="text/css" link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+</head>
+
+<body>
+
+    <nav id="mainNav" class="navbar navbar-light navbar-expand-lg fixed-top"
+        style="background-image: linear-gradient(to right, #2b1908 30%, white);">
+        <div id="navbarResponsive" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="../homepage.ejs">Home</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="openForm()"> Log in</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="registerForm()"> register</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Add a restaurant</a></li>
+            </ul>
+        </div>
+
+    </nav>
+    <header class="masthead"
+        style="background-image:url('https://www.wallpaperup.com/uploads/wallpapers/2014/11/09/511920/45482ae7629d9bbc982b907b8d90e776-1000.jpg'); opacity: 0.95;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                    <div class="site-heading">
+                        <h1>Zwiggy</h1><span class="subheading">From our kitchen to your heart!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Log in Form -->
+    <div class="form-popup" id="myForm">
+        <form action="submit" method="POST" class="form-container">
+            <div class="close-btn" onclick="closeForm()">&times;</div>
+            <h1>Log in</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Login</button><br></br>
+            <button type="button" class="btn google" onclick="googlelogin()"><i class="fab fa-google fa-1x"
+                    style="padding: 2px;"></i>
+                Continue
+                with google</button>
+        </form>
+    </div>
+    <!-- Register From -->
+    <div class="form-popup" id="Form">
+        <form action="submit" method="POST" class="form-container">
+            <div class="close-btn" onclick="closeR()">&times;</div>
+            <h1>Register</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">register</button><br></br>
+
+        </form>
+    </div>
+
+
+    <footer class="py-5 bg-black">
+        <div class="container">
+            <p class="text-center text-white m-0 small">Copyright © TeamName 2021</p>
+        </div>
+    </footer>
+
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+        function registerForm() {
+            document.getElementById("Form").style.display = "block";
+        }
+        function closeR() {
+            document.getElementById("Form").style.display = "none";
+        }
+
+    </script>
+
+</body>
+
+</html>

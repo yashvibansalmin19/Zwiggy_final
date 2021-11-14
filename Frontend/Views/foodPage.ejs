@@ -1,0 +1,80 @@
+<!--HomePage-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zwiggy</title>
+    <link rel="shortcut icon" type="image/css"
+        href="https://www.logolynx.com/images/logolynx/c1/c1aab45afa5b0623e251711ba6440544.png">
+    <link rel="stylesheet" type="text/css" link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+</head>
+
+<body>
+
+    <nav id="mainNav" class="navbar navbar-light navbar-expand-lg fixed-top"
+        style="background-image: linear-gradient(to right, #2b1908 30%, white);">
+        <div id="navbarResponsive" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="../homepage.ejs"><i
+                            href="https://www.logolynx.com/images/logolynx/c1/c1aab45afa5b0623e251711ba6440544.png"
+                            style="padding: 3px;">Zwiggy</i></a></li>
+            </ul>
+            <ul class="navbar-nav mr-auto">
+                USERNAME
+            </ul>
+        </div>
+
+    </nav>
+    <div>
+
+    </div>
+    <footer class="py-5 bg-black">
+        <div class="container">
+            <p class="text-center text-white m-0 small">Copyright © TeamName 2021</p>
+        </div>
+    </footer>
+
+    <!-- geolocation -->
+
+    <script>
+        window.onload = (function () {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                const latitude = (position.coords.latitude)
+                const longitude = (position.coords.longitude)
+                const data = {
+                    "longitude": longitude,
+                    "latitude": latitude
+                }
+                fetch('http://localhost:8000/updateuserlocation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    })
+            },
+                function (error) {
+                    console.log("The Locator was denied. :(")
+                })
+        })();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<h1>Add Product</h1>
+<form action="/restaurant/add_product" method="POST" enctype="multipart/form-data">
+  <div>
+    <label for="name">name</label>
+    <input type="name" id="name" name="name" required>
+  </div>
+  <div>
+    <label for="image">image</label>
+    <input type="file" id="uploaded_file" name="uploaded_file" required>
+  </div>
+  <div>
+    <label for="price">price</label>
+    <input type="price" id="price" name="price" required>
+  </div>
+  <button type="submit">Register</button>
+</form>
+<a href="/login">Login</a>
