@@ -387,8 +387,8 @@ app.get('/restaurant/see_orders', checkAuthenticated, async (req, res) => {
     res.json(order)
 })
 
-const port = process.env.PORT || 8000;
-app.listen(port, () => {
-    console.log(`Server is up and running on http://localhost:${port}`);
+//const port = process.env.PORT || 8000;
+app.listen(process.env.PORT, () => {
+    console.log(`Server is up and running on  https://zwiggy-food-delivery.herokuapp.com/`);
 });
 
