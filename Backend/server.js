@@ -128,7 +128,7 @@ app.get('/', checkAuthenticated, (req, res) => {
 app.get('/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => { res.redirect('/') })
 
 app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
-    successRedirect: '/',
+    successRedirect: '/foodPage',
     failureRedirect: '/restaurant/register',
     failureFlash: true
 }))
