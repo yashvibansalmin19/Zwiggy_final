@@ -124,7 +124,9 @@ app.get('/', checkAuthenticated, (req, res) => {
     console.log(req.user.email)
     res.render('foodPage.ejs', { name: req.user.email })
 })
-
+app.get('/', checkNotAuthenticated, (req, res) => {
+    res.render('homepage.ejs')
+})
 
 app.get('/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => { res.redirect('/') })
 
