@@ -65,6 +65,7 @@ app.use(express.static(path.join(__dirname, 'main')));
 var multer = require('multer');
 const cart_model = require('./models/cart_model.js');
 const { Http2ServerResponse } = require('http2');
+const { prototype } = require('module');
 
 var storage = multer.diskStorage({
     destination: 'uploads/',
@@ -386,7 +387,8 @@ app.get('/restaurant/see_orders', checkAuthenticated, async (req, res) => {
     res.json(order)
 })
 
-app.listen(8000, () => {
-    console.log(`Server is up and running on http://localhost:${8000}`);
+const port = process.env.PORT || 8000;
+app.listen(port, () => {
+    console.log(`Server is up and running on http://localhost:${port}`);
 });
 
